@@ -17,9 +17,14 @@ function Home() {
 
         api.get("/makeup-looks")
             .then((response) => {
+                console.log("Makeup looks response:", response.data);
 
-                setLooks(response.data);
-
+                if (Array.isArray(response.data)) {
+                    setLooks(response.data);
+                } else {
+                    console.error("Expected an array but received:", response.data);
+                    setLooks([]);
+                }
             })
             .catch((error) => {
 
@@ -63,7 +68,7 @@ function Home() {
                     className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
                 >
 
-                    {looks.map((look) => (
+                    {Array.isArray(looks) && looks.map((look) => (
 
                         <MakeupCard
                             key={look.id}
