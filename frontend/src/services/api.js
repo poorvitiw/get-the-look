@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "get-the-look-backend-production.up.railway.app"
+    baseURL: "https://get-the-look-backend-production.up.railway.app"
 });
 
 export default api;
