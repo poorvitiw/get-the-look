@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/makeup-looks")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = {"http://localhost:5173" , "get-the-look-production.up.railway.app"})
 public class MakeupLookController {
     private final MakeupLookService service;
 

@@ -7,11 +7,12 @@ function Home() {
 
     const [looks, setLooks] = useState([]);
     const navigate = useNavigate();
-    const exploreLooks = () => {
-        document.getElementById("looks")?.scrollIntoView({
-            behavior: "smooth"
-        });
-    };
+   const exploreLooks = () => {
+       document.getElementById("looks")?.scrollIntoView({
+           behavior: "smooth",
+           block: "start"
+       });
+   };
 
     useEffect(() => {
 
@@ -65,7 +66,7 @@ function Home() {
 
                 <div
                     id="looks"
-                    className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+                    className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 min-h-[300px]"
                 >
 
                     {Array.isArray(looks) && looks.map((look) => (
